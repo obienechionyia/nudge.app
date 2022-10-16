@@ -1,0 +1,26 @@
+.section-center {
+    display: flex;
+    justify-content: center;
+}
+
+.clear-btn {
+    margin-top: 1rem;
+}
+
+.submit-btn {
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+.reminder-container {
+    display: none;
+}
+
+.show-container {
+    display: inline;
+}
