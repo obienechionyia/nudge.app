@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reminder App</title>
+    <title>Nudge App</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/ac99683277.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <section class="section-center">
-        <form class="reminder-form">
-            <h2>Reminders</h2>
-            <div class="form-control">
-                <input type="text" id="reminder" placeholder="e.g. file taxes">
-                <button type="submit" class="submit-btn">submit</button>
+        <div>
+            <h1>nudge.app</h1>
+            <div class="form-container">
+                <form class="reminder-form">
+                    <div class="form-control">
+                        <input type="text" id="reminder" placeholder="e.g. file taxes">
+                        <button type="submit" class="submit-btn">add</button>
+                    </div>
+                </form>
             </div>
-        </form>
-        <div class="reminder-container">
-            <div class="reminder-list">
-
+            <div class="reminder-container">
+                <div class="reminder-list">
+                </div>
+                <button type="button" class="clear-btn">clear nudges</button>
             </div>
-            <button type="button" class="clear-btn">Clear Items</button>
         </div>
     </section>
 

@@ -24,8 +24,10 @@ function addItem (e) {
         element.setAttributeNode(attr);
         const value = reminder.value;
         element.innerHTML += `<p class="title">${value}</p>
-                            <button class="delete-btn">delete</button>
-                            <button class="edit-btn">edit</button>`;
+                            <div class="btn-container">
+                                <button class="delete-btn"><i class="fa-regular fa-trash-can"></i></button>
+                                <button class="edit-btn"><i class="fa-regular fa-pen-to-square"></i></button>
+                            </div>`;
         reminderList.appendChild(element);
         reminder.value = "";
         container.classList.add('show-container');
@@ -52,7 +54,7 @@ function clearItems () {
 }
 
 function deleteItem (e) {
-    const element = e.currentTarget.parentElement;
+    const element = e.currentTarget.parentElement.parentElement;
     reminderList.removeChild(element);
     if (reminderList.children.length === 0) {
         container.classList.remove('show-container');
@@ -61,7 +63,7 @@ function deleteItem (e) {
 }
 
 function editItem (e) {
-    editElement = e.currentTarget.previousElementSibling.previousElementSibling;
+    editElement = e.currentTarget.parentElement.previousElementSibling;
     reminder.value = editElement.innerHTML;
     editFlag = true;
     submitBtn.textContent = "edit";
