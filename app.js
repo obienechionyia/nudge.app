@@ -3,6 +3,7 @@ const submitBtn = document.querySelector('.submit-btn');
 const reminderList = document.querySelector('.reminder-list');
 const container = document.querySelector('.reminder-container');
 const clearBtn = document.querySelector('.clear-btn');
+const clearChecked = document.querySelector('.clear-checked');
 const form = document.querySelector('.reminder-form');
 
 
@@ -25,6 +26,7 @@ function addItem (e) {
         const value = reminder.value;
         element.innerHTML += `<p class="title">${value}</p>
                             <div class="btn-container">
+                            <input type="checkbox" class="checkbox">
                                 <button class="delete-btn"><i class="fa-regular fa-trash-can"></i></button>
                                 <button class="edit-btn"><i class="fa-regular fa-pen-to-square"></i></button>
                             </div>`;
@@ -46,6 +48,22 @@ function addItem (e) {
     } else {
         alert('please enter a nudge');
     }
+
+    const checkedBoxes = [];
+
+    const checkboxes = document.querySelectorAll(".checkbox");
+    checkboxes.forEach(function(box) {
+        box.addEventListener('change', function() {
+            if (box.checked) {
+                box.parentElement.parentElement.children[0].classList.add('strike');
+                checkedBoxes.push(box);
+            } else {
+                box.parentElement.parentElement.children[0].classList.remove('strike');
+            }
+        })
+    })
+
+    console.log(checkedBoxes);
 }
 
 function clearItems () {
@@ -67,4 +85,4 @@ function editItem (e) {
     reminder.value = editElement.innerHTML;
     editFlag = true;
     submitBtn.textContent = "edit";
-};
+}
