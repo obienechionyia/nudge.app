@@ -72,7 +72,13 @@ h1 {
     cursor: pointer;
     background-color: white;
     border: none;
-    font-size: large;
+    font-size: 19px;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    font-size:22px;
+    transition: 0.3s;
 }
 
 .reminder-item {
@@ -107,6 +113,20 @@ h1 {
     padding-right: 15px;
     padding-left: 15px;
     display: none;
+}
+
+.undo-btn {
+    display: none;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.undo-btn:hover {
+    font-size: 23px;
+    transition: 0.3s;
 }
 
 .show-item {
