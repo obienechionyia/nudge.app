@@ -79,11 +79,6 @@ function deleteItem (e) {
     if (reminderList.children.length === 0) {
         container.classList.remove('show-container');
     }
-    undo.classList.add('show-item');
-    undo.addEventListener('click', function () {
-        container.classList.add('show-container');
-        reminderList.appendChild(element);
-    })
 }
 
 function editItem (e) {
