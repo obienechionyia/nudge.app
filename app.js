@@ -10,6 +10,7 @@ const undo = document.querySelector('.undo-btn');
 
 form.addEventListener('submit', addItem);
 clearBtn.addEventListener('click', clearItems);
+clearChecked.addEventListener('click', deleteChecked);
 
 let editElement;
 let editFlag = false;
@@ -64,9 +65,17 @@ function addItem (e) {
                     return item !== box;
                 })
             }
+            if (checkedBoxes.length >= 1) {
+                clearChecked.classList.add('show-item');
+                console.log(checkedBoxes.length);
+            } else {
+                clearChecked.classList.remove('show-item');
+            }
         })
     })
 }
+
+
 
 function clearItems () {
     reminderList.innerHTML = "";
@@ -88,15 +97,16 @@ function editItem (e) {
     submitBtn.textContent = "edit";
 }
 
-// function showClearChecked (array) {
-//     if (array.length > 0) {
-//         clearChecked.classList.add('show-item');
-//     } else {
-//         clearChecked.classList.remove('show-item');
-//     }
-//     clearChecked.addEventListener('click', function () {
-//         array.forEach(function (check) {
-//             check.parentElement.parentElement.innerHTML = "";
-//         })
-//     })
-// }
+function deleteChecked () {
+    checkedList = [];
+    checked = document.querySelectorAll('.checkbox');
+    checked.forEach(function (box) {
+        if (box.checked) {
+            box.parentElement.parentElement.remove();
+        }
+    })
+    clearChecked.classList.remove('show-item');
+    if (reminderList.innerHTML == "") {
+        container.classList.remove('show-container');
+    }
+}
