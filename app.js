@@ -1,3 +1,5 @@
+// buttons and containers that will be used to manipulate DOM
+
 const reminder = document.getElementById('reminder');
 const submitBtn = document.querySelector('.submit-btn');
 const reminderList = document.querySelector('.reminder-list');
@@ -7,13 +9,18 @@ const clearChecked = document.querySelector('.clear-checked');
 const form = document.querySelector('.reminder-form');
 const undo = document.querySelector('.undo-btn');
 
+// event listeners
 
 form.addEventListener('submit', addItem);
 clearBtn.addEventListener('click', clearItems);
 clearChecked.addEventListener('click', deleteChecked);
 
+// edit variables
 let editElement;
 let editFlag = false;
+
+
+// function to add an item to the reminder list
 
 function addItem (e) {
     e.preventDefault();
@@ -51,6 +58,7 @@ function addItem (e) {
         alert('please enter a nudge');
     }
 
+    // checked boxes array, necessary to show and remove the clearChecked button
     let checkedBoxes = [];
 
     const checkboxes = document.querySelectorAll(".checkbox");
