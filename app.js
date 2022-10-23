@@ -51,7 +51,7 @@ function addItem (e) {
             btn.addEventListener('click', deleteItem);
     })} else if (value && editFlag == true) {
         editElement.innerHTML = reminder.value;
-        submitBtn.textContent = "submit";
+        submitBtn.textContent = "add";
         reminder.value = "";
         editFlag = false;
     } else {
